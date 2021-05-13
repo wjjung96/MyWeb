@@ -1,0 +1,21 @@
+--회원 테이블
+create table users(
+    id varchar2(50) primary key,
+    pw varchar2(50) not null,
+    name varchar2(50) not null,
+    email varchar2(50),
+    address varchar2(200),
+    regdate date default sysdate
+);
+
+--글 테이블
+create table board(
+    bno number(10) primary key,
+    writer varchar2(50) not null,
+    title varchar2(200) not null,
+    content varchar2(2000),
+    regdate date default sysdate,
+    hit number(10) default 0
+);
+
+create sequence board_seq start with 1 increment by 1 nocache;
